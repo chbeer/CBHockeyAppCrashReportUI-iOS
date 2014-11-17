@@ -50,6 +50,7 @@ typedef enum {
     CGFloat _commentRowHeight;
     
     BOOL _hasLayoutManager; // for height calculation
+    BOOL _hasSeparatorInsets;
 }
 
 /*! Presents the crash report dialog as a modal view on the view controler. Modal presentation style
@@ -88,6 +89,7 @@ typedef enum {
     _commentMinRowHeight = 100;
     
     _hasLayoutManager = NSClassFromString(@"NSLayoutManager") != nil;
+    _hasSeparatorInsets = [self.tableView respondsToSelector:@selector(setSeparatorInset:)];
     
     return self;
 }
@@ -169,8 +171,13 @@ typedef enum {
     }
     
     UIView *control = nil;
-    CGRect controlFrame = CGRectInset(cell.contentView.bounds, cell.separatorInset.left,
-                                      cell.separatorInset.top);
+    CGRect controlFrame;
+    if (_hasSeparatorInsets) {
+        controlFrame = CGRectInset(cell.contentView.bounds, cell.separatorInset.left,
+                                        cell.separatorInset.top);
+    } else {
+        controlFrame = CGRectInset(cell.contentView.bounds, 20,0);
+    }
     
     if (indexPath.section == CBCrashReportUISectionUserInfo && indexPath.row == CBCrashReportUIUserInfoCellName) {
         if (!self.userNameTextField) {
@@ -212,7 +219,6 @@ typedef enum {
             textView.scrollEnabled = NO;
             textView.scrollsToTop = NO;
             textView.delegate = self;
-            textView.layoutManager.allowsNonContiguousLayout = NO;
             textView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0);
             self.commentsTextView = textView;
             control = textView;
