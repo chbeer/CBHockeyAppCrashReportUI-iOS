@@ -8,6 +8,13 @@
 
 #import "AppDelegate.h"
 
+#import "BITHockeyManager.h"
+#import "BITCrashManager.h"
+#import "BITAuthenticator.h"
+
+#import "CBHockeyAppCrashReportTableViewController.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -15,8 +22,30 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
+    
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"APP_IDENTIFIER"];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[[BITHockeyManager sharedHockeyManager] authenticator] authenticateInstallation];
+    
+    __weak __typeof(self) wself = self;
+    [[BITHockeyManager sharedHockeyManager].crashManager setAlertViewHandler:^{
+        AppDelegate *sself = wself;
+        if (!sself) return;
+        
+        BITCrashDetails *details = [[BITHockeyManager sharedHockeyManager].crashManager lastSessionCrashDetails];
+        
+        UIViewController *viewCtrl = [sself.window rootViewController];
+        NSString *appName = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleNameKey];
+        [CBHockeyAppCrashReportTableViewController presentCrashReportDialogWithCrashDetails:details
+                                                                                    appName:appName
+                                                                           onViewController:viewCtrl
+                                                                                   animated:YES
+                                                                                 completion:NULL];
+    }];
+    
     return YES;
 }
 

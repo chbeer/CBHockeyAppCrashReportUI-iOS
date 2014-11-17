@@ -25,10 +25,21 @@
                                     <action selector="showCrashReportDialog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ue6-2K-8Bx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-kO-1P5">
+                                <rect key="frame" x="277" y="323" width="41" height="30"/>
+                                <state key="normal" title="Crash">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="crash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pTk-Fl-E1V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Pxg-ic-fwb" secondAttribute="centerX" id="Cff-V1-2dX"/>
+                            <constraint firstItem="h8e-kO-1P5" firstAttribute="top" secondItem="Pxg-ic-fwb" secondAttribute="bottom" constant="8" id="Z9d-Fg-Run"/>
+                            <constraint firstAttribute="centerX" secondItem="h8e-kO-1P5" secondAttribute="centerX" constant="2.5" id="fam-uP-teT"/>
                             <constraint firstAttribute="centerY" secondItem="Pxg-ic-fwb" secondAttribute="centerY" id="piI-Wa-0xz"/>
                         </constraints>
                     </view>

@@ -44,11 +44,18 @@
                                                                          osVersion:@"8.1.1"
                                                                            osBuild:@"8A1234"
                                                                           appBuild:@"1.2.3"];
-    CBHockeyAppCrashReportTableViewController *ctrl = [[CBHockeyAppCrashReportTableViewController alloc] initWithCrashDetails:details
-                                                                                                                      appName:@"Dummy App"];
-    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:ctrl];
-    [self presentViewController:navCtrl animated:YES
-                     completion:NULL];
+    NSString *appName = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleNameKey];
+    [CBHockeyAppCrashReportTableViewController presentCrashReportDialogWithCrashDetails:details
+                                                                                appName:appName
+                                                                       onViewController:self
+                                                                               animated:YES
+                                                                             completion:NULL];
+}
+
+- (IBAction) crash:(id)sender
+{
+    // crash on purpose
+    kill( getpid(), SIGABRT );
 }
 
 @end
