@@ -5,20 +5,22 @@ Pod::Spec.new do |s|
   s.summary      = "Dialog for adding details to a crash report as in the Mac version of HockeyApp."
 
   s.description  = <<-DESC
-                   Uses a UITableView for the dialog.
+                   Dialog for adding details to a crash report as in the Mac version of HockeyApp.
+                   Uses a grouped UITableView for the dialog UI.
                    DESC
 
   s.license      = "MIT"
 
   s.author             = { "Christian Beer" => "christian.beer@chbeer.de" }
   s.social_media_url   = "http://twitter.com/Christian_Beer"
+  s.homepage           = "https://github.com/chbeer/CBHockeyAppCrashReportUI-iOS"
 
   s.platform     = :ios, "6.1"
 
   s.source       = { :git => "https://github.com/chbeer/CBHockeyAppCrashReportUI-iOS.git", :tag => "0.0.1" }
 
   s.source_files  = "Library", "Library/*.{h,m}"
-  s.resources = "Library/Resources/*.png"
+  s.resources = "Library/Resources/**"
 
   s.requires_arc = true
 
