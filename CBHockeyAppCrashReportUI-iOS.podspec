@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CBHockeyAppCrashReportUI-iOS"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Dialog for adding details to a crash report as in the Mac version of HockeyApp."
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "6.1"
 
-  s.source       = { :git => "https://github.com/chbeer/CBHockeyAppCrashReportUI-iOS.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/chbeer/CBHockeyAppCrashReportUI-iOS.git", :tag => s.version }
 
   s.source_files  = "Library", "Library/*.{h,m}"
   s.resources = "Library/Resources/**"
