@@ -12,22 +12,24 @@ How to use
 
 To replace the default UIAlert you need to do this after setting up HockeySDK:
 
-    __weak __typeof(self) wself = self;
-    [[BITHockeyManager sharedHockeyManager].crashManager setAlertViewHandler:^{
-        AppDelegate *sself = wself;
-        if (!sself) return;
+```
+__weak __typeof(self) wself = self;
+[[BITHockeyManager sharedHockeyManager].crashManager setAlertViewHandler:^{
+    AppDelegate *sself = wself;
+    if (!sself) return;
 
-        BITCrashDetails *details = [[BITHockeyManager sharedHockeyManager].crashManager lastSessionCrashDetails];
+    BITCrashDetails *details = [[BITHockeyManager sharedHockeyManager].crashManager lastSessionCrashDetails];
 
-        UIViewController *viewCtrl = [sself.window rootViewController];
-        NSString *appName = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleNameKey];
+    UIViewController *viewCtrl = [sself.window rootViewController];
+    NSString *appName = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleNameKey];
 
-        [CBHockeyAppCrashReportTableViewController presentCrashReportDialogWithCrashDetails:details
-                                                                                    appName:appName
-                                                                           onViewController:viewCtrl
-                                                                                   animated:YES
-                                                                                 completion:NULL];
-     }];
+    [CBHockeyAppCrashReportTableViewController presentCrashReportDialogWithCrashDetails:details
+                                                                                appName:appName
+                                                                       onViewController:viewCtrl
+                                                                               animated:YES
+                                                                             completion:NULL];
+ }];
+```
 
 More info can be found here: http://hockeyapp.net/help/sdk/ios/3.6.1/docs/docs/HowTo-Set-Custom-AlertViewHandler.html
 
