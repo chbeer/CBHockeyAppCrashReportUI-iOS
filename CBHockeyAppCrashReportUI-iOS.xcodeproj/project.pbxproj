@@ -38,6 +38,12 @@
 		AA9FF7C61A1A116D00F0E8D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
 		AA9FF7C71A1A117000F0E8D8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
 		AA9FF7C81A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CBHockeyAppCrashReportUI-iOS.podspec"; sourceTree = SOURCE_ROOT; };
+		AA9FF7CA1A1A16D900F0E8D8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7CB1A1A16E200F0E8D8 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7CC1A1A170C00F0E8D8 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7CD1A1A172A00F0E8D8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7CE1A1A174600F0E8D8 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7CF1A1A176200F0E8D8 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
 		D60D9C98D4BB8A7E64F548DC /* Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBHockeyAppCrashReportUI-iOS/Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +183,12 @@
 				en,
 				Base,
 				de,
+				fr,
+				fi,
+				it,
+				ja,
+				nb,
+				sv,
 			);
 			mainGroup = AA9FF7801A19F41B00F0E8D8;
 			productRefGroup = AA9FF78A1A19F41B00F0E8D8 /* Products */;
@@ -273,8 +285,15 @@
 				AA9FF7C41A1A116800F0E8D8 /* Base */,
 				AA9FF7C61A1A116D00F0E8D8 /* en */,
 				AA9FF7C71A1A117000F0E8D8 /* de */,
+				AA9FF7CA1A1A16D900F0E8D8 /* fr */,
+				AA9FF7CB1A1A16E200F0E8D8 /* fi */,
+				AA9FF7CC1A1A170C00F0E8D8 /* it */,
+				AA9FF7CD1A1A172A00F0E8D8 /* ja */,
+				AA9FF7CE1A1A174600F0E8D8 /* nb */,
+				AA9FF7CF1A1A176200F0E8D8 /* sv */,
 			);
 			name = CBHockeyAppCrashReportUI.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
