@@ -33,3 +33,4 @@ __weak __typeof(self) wself = self;
 
 More info can be found here: http://hockeyapp.net/help/sdk/ios/3.6.1/docs/docs/HowTo-Set-Custom-AlertViewHandler.html
 
+![Screenshot](Documentation/Screenshot.png)
