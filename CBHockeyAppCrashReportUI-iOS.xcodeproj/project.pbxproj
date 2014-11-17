@@ -7,29 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17738A226AFFB581293A6098 /* libPods-CBHockeyAppCrashReportUI-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC7E7BECA56102ABE1BD4BD /* libPods-CBHockeyAppCrashReportUI-iOS.a */; };
 		AA9FF78F1A19F41B00F0E8D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF78E1A19F41B00F0E8D8 /* main.m */; };
 		AA9FF7921A19F41B00F0E8D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7911A19F41B00F0E8D8 /* AppDelegate.m */; };
 		AA9FF7951A19F41B00F0E8D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7941A19F41B00F0E8D8 /* ViewController.m */; };
 		AA9FF7981A19F41B00F0E8D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7961A19F41B00F0E8D8 /* Main.storyboard */; };
 		AA9FF79A1A19F41B00F0E8D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7991A19F41B00F0E8D8 /* Images.xcassets */; };
 		AA9FF79D1A19F41B00F0E8D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF79B1A19F41B00F0E8D8 /* LaunchScreen.xib */; };
-		AA9FF7A91A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7A81A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI_iOSTests.m */; };
+		AA9FF7B81A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7B71A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m */; };
+		AA9FF7C51A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7C31A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings */; };
+		AA9FF7C91A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7C81A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AA9FF7A31A19F41B00F0E8D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA9FF7811A19F41B00F0E8D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA9FF7881A19F41B00F0E8D8;
-			remoteInfo = "CBHockeyAppCrashReportUI-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		3DC7E7BECA56102ABE1BD4BD /* libPods-CBHockeyAppCrashReportUI-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CBHockeyAppCrashReportUI-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69DB7DDA2D76B3027689E18D /* Pods-CBHockeyAppCrashReportUI-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBHockeyAppCrashReportUI-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBHockeyAppCrashReportUI-iOS/Pods-CBHockeyAppCrashReportUI-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AA9FF7891A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CBHockeyAppCrashReportUI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA9FF78D1A19F41B00F0E8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA9FF78E1A19F41B00F0E8D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA9FF78D1A19F41B00F0E8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = "<group>"; };
+		AA9FF78E1A19F41B00F0E8D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = "<group>"; };
 		AA9FF7901A19F41B00F0E8D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA9FF7911A19F41B00F0E8D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AA9FF7931A19F41B00F0E8D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -37,9 +32,13 @@
 		AA9FF7971A19F41B00F0E8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA9FF7991A19F41B00F0E8D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA9FF79C1A19F41B00F0E8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AA9FF7A21A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CBHockeyAppCrashReportUI-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA9FF7A71A19F41B00F0E8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA9FF7A81A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBHockeyAppCrashReportUI_iOSTests.m; sourceTree = "<group>"; };
+		AA9FF7B61A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHockeyAppCrashReportTableViewController.h; sourceTree = "<group>"; };
+		AA9FF7B71A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHockeyAppCrashReportTableViewController.m; sourceTree = "<group>"; };
+		AA9FF7C41A1A116800F0E8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7C61A1A116D00F0E8D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7C71A1A117000F0E8D8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
+		AA9FF7C81A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CBHockeyAppCrashReportUI-iOS.podspec"; sourceTree = SOURCE_ROOT; };
+		D60D9C98D4BB8A7E64F548DC /* Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBHockeyAppCrashReportUI-iOS/Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,25 +46,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA9FF79F1A19F41B00F0E8D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				17738A226AFFB581293A6098 /* libPods-CBHockeyAppCrashReportUI-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0818D98B7F0B9A7748946EF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69DB7DDA2D76B3027689E18D /* Pods-CBHockeyAppCrashReportUI-iOS.debug.xcconfig */,
+				D60D9C98D4BB8A7E64F548DC /* Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA9FF7801A19F41B00F0E8D8 = {
 			isa = PBXGroup;
 			children = (
 				AA9FF78B1A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS */,
-				AA9FF7A51A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests */,
 				AA9FF78A1A19F41B00F0E8D8 /* Products */,
+				0818D98B7F0B9A7748946EF5 /* Pods */,
+				F7809D2F28CE5042CAA8111D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,12 +76,30 @@
 			isa = PBXGroup;
 			children = (
 				AA9FF7891A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS.app */,
-				AA9FF7A21A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 		AA9FF78B1A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AA9FF7C21A1A111F00F0E8D8 /* Library */,
+				AA9FF7BC1A1A06D200F0E8D8 /* Example */,
+			);
+			name = "CBHockeyAppCrashReportUI-iOS";
+			sourceTree = "<group>";
+		};
+		AA9FF78C1A19F41B00F0E8D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA9FF78D1A19F41B00F0E8D8 /* Info.plist */,
+				AA9FF78E1A19F41B00F0E8D8 /* main.m */,
+			);
+			name = "Supporting Files";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AA9FF7BC1A1A06D200F0E8D8 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				AA9FF7901A19F41B00F0E8D8 /* AppDelegate.h */,
@@ -90,33 +111,26 @@
 				AA9FF79B1A19F41B00F0E8D8 /* LaunchScreen.xib */,
 				AA9FF78C1A19F41B00F0E8D8 /* Supporting Files */,
 			);
-			path = "CBHockeyAppCrashReportUI-iOS";
+			path = Example;
 			sourceTree = "<group>";
 		};
-		AA9FF78C1A19F41B00F0E8D8 /* Supporting Files */ = {
+		AA9FF7C21A1A111F00F0E8D8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				AA9FF78D1A19F41B00F0E8D8 /* Info.plist */,
-				AA9FF78E1A19F41B00F0E8D8 /* main.m */,
+				AA9FF7C81A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec */,
+				AA9FF7B61A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.h */,
+				AA9FF7B71A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m */,
+				AA9FF7C31A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings */,
 			);
-			name = "Supporting Files";
+			path = Library;
 			sourceTree = "<group>";
 		};
-		AA9FF7A51A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests */ = {
+		F7809D2F28CE5042CAA8111D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA9FF7A81A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI_iOSTests.m */,
-				AA9FF7A61A19F41B00F0E8D8 /* Supporting Files */,
+				3DC7E7BECA56102ABE1BD4BD /* libPods-CBHockeyAppCrashReportUI-iOS.a */,
 			);
-			path = "CBHockeyAppCrashReportUI-iOSTests";
-			sourceTree = "<group>";
-		};
-		AA9FF7A61A19F41B00F0E8D8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA9FF7A71A19F41B00F0E8D8 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA9FF7AC1A19F41B00F0E8D8 /* Build configuration list for PBXNativeTarget "CBHockeyAppCrashReportUI-iOS" */;
 			buildPhases = (
+				0F00F2611951FE1AB007B45D /* Check Pods Manifest.lock */,
 				AA9FF7851A19F41B00F0E8D8 /* Sources */,
 				AA9FF7861A19F41B00F0E8D8 /* Frameworks */,
 				AA9FF7871A19F41B00F0E8D8 /* Resources */,
+				0DB0E76AA5FEAD110B19DAF8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,24 +154,6 @@
 			productName = "CBHockeyAppCrashReportUI-iOS";
 			productReference = AA9FF7891A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AA9FF7A11A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA9FF7AF1A19F41B00F0E8D8 /* Build configuration list for PBXNativeTarget "CBHockeyAppCrashReportUI-iOSTests" */;
-			buildPhases = (
-				AA9FF79E1A19F41B00F0E8D8 /* Sources */,
-				AA9FF79F1A19F41B00F0E8D8 /* Frameworks */,
-				AA9FF7A01A19F41B00F0E8D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA9FF7A41A19F41B00F0E8D8 /* PBXTargetDependency */,
-			);
-			name = "CBHockeyAppCrashReportUI-iOSTests";
-			productName = "CBHockeyAppCrashReportUI-iOSTests";
-			productReference = AA9FF7A21A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -169,10 +167,6 @@
 					AA9FF7881A19F41B00F0E8D8 = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					AA9FF7A11A19F41B00F0E8D8 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = AA9FF7881A19F41B00F0E8D8;
-					};
 				};
 			};
 			buildConfigurationList = AA9FF7841A19F41B00F0E8D8 /* Build configuration list for PBXProject "CBHockeyAppCrashReportUI-iOS" */;
@@ -182,6 +176,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = AA9FF7801A19F41B00F0E8D8;
 			productRefGroup = AA9FF78A1A19F41B00F0E8D8 /* Products */;
@@ -189,7 +184,6 @@
 			projectRoot = "";
 			targets = (
 				AA9FF7881A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS */,
-				AA9FF7A11A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -199,20 +193,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9FF7C91A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec in Resources */,
+				AA9FF7C51A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings in Resources */,
 				AA9FF7981A19F41B00F0E8D8 /* Main.storyboard in Resources */,
 				AA9FF79D1A19F41B00F0E8D8 /* LaunchScreen.xib in Resources */,
 				AA9FF79A1A19F41B00F0E8D8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA9FF7A01A19F41B00F0E8D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DB0E76AA5FEAD110B19DAF8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CBHockeyAppCrashReportUI-iOS/Pods-CBHockeyAppCrashReportUI-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		0F00F2611951FE1AB007B45D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA9FF7851A19F41B00F0E8D8 /* Sources */ = {
@@ -222,26 +244,11 @@
 				AA9FF7951A19F41B00F0E8D8 /* ViewController.m in Sources */,
 				AA9FF7921A19F41B00F0E8D8 /* AppDelegate.m in Sources */,
 				AA9FF78F1A19F41B00F0E8D8 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA9FF79E1A19F41B00F0E8D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA9FF7A91A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI_iOSTests.m in Sources */,
+				AA9FF7B81A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AA9FF7A41A19F41B00F0E8D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA9FF7881A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS */;
-			targetProxy = AA9FF7A31A19F41B00F0E8D8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AA9FF7961A19F41B00F0E8D8 /* Main.storyboard */ = {
@@ -258,6 +265,16 @@
 				AA9FF79C1A19F41B00F0E8D8 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		AA9FF7C31A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA9FF7C41A1A116800F0E8D8 /* Base */,
+				AA9FF7C61A1A116D00F0E8D8 /* en */,
+				AA9FF7C71A1A117000F0E8D8 /* de */,
+			);
+			name = CBHockeyAppCrashReportUI.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -343,6 +360,7 @@
 		};
 		AA9FF7AD1A19F41B00F0E8D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69DB7DDA2D76B3027689E18D /* Pods-CBHockeyAppCrashReportUI-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CBHockeyAppCrashReportUI-iOS/Info.plist";
@@ -353,45 +371,12 @@
 		};
 		AA9FF7AE1A19F41B00F0E8D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D60D9C98D4BB8A7E64F548DC /* Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CBHockeyAppCrashReportUI-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		AA9FF7B01A19F41B00F0E8D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "CBHockeyAppCrashReportUI-iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CBHockeyAppCrashReportUI-iOS.app/CBHockeyAppCrashReportUI-iOS";
-			};
-			name = Debug;
-		};
-		AA9FF7B11A19F41B00F0E8D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "CBHockeyAppCrashReportUI-iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CBHockeyAppCrashReportUI-iOS.app/CBHockeyAppCrashReportUI-iOS";
 			};
 			name = Release;
 		};
@@ -414,14 +399,7 @@
 				AA9FF7AE1A19F41B00F0E8D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		AA9FF7AF1A19F41B00F0E8D8 /* Build configuration list for PBXNativeTarget "CBHockeyAppCrashReportUI-iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA9FF7B01A19F41B00F0E8D8 /* Debug */,
-				AA9FF7B11A19F41B00F0E8D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

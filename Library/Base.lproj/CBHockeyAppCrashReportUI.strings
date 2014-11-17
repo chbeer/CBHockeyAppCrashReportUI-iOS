@@ -1,0 +1,40 @@
+/* All texts taken from HockeySDK-Mac : 
+ * https://github.com/bitstadium/HockeySDK-Mac/blob/develop/Resources/en.lproj/HockeySDK.strings */
+
+/* Crash dialog */
+
+/* Window title string, with placeholder for the AppName */
+"WindowTitle" = "Problem Report for %@";
+
+/* Introduction text, with app name placeholder first and company placeholder second */
+"IntroductionText" = "%@ unexpectedly quit. Would you like to send a report so we can fix the problem?";
+
+/* Name Text Title */
+"NameTextTitle" = "Name";
+
+/* Email Text Title */
+"EmailTextTitle" = "Email";
+
+/* Comments Disclosure Text */
+"CommentsDisclosureTitle" = "Comments";
+
+/* User description placeholder */
+"UserDescriptionPlaceholder" = "Please describe any steps needed to trigger the problem";
+
+/* Problems Details Box  Title */
+"ProblemDetailsTitle" = "Problem details and system configuration";
+
+/* Privacy note text */
+"PrivacyNote" = "Only the presented data will be sent with this report.";
+
+/* Show Details Button */
+"ShowDetailsButtonTitle" = "Show Details";
+
+/* Hide Details Button */
+"HideDetailsButtonTitle" = "Hide Details";
+
+/* Cancel Button */
+"CancelButtonTitle" = "Cancel";
+
+/* Send Button */
+"SendButtonTitle" = "Send";
