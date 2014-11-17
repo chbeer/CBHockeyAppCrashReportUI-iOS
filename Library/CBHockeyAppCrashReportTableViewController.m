@@ -31,11 +31,12 @@ typedef enum {
 } CBCrashReportUIUserInfoCell;
 
 
-@interface CBHockeyAppCrashReportTableViewController () <UITextViewDelegate>
+@interface CBHockeyAppCrashReportTableViewController () <UITextFieldDelegate,UITextViewDelegate>
 
-@property (nonatomic, strong) UITextField *userNameTextField;
-@property (nonatomic, strong) UITextField *userEMailTextField;
-@property (nonatomic, strong) UITextView *commentsTextView;
+@property (nonatomic, strong) UITextField   *userNameTextField;
+@property (nonatomic, strong) UITextField   *userEMailTextField;
+@property (nonatomic, strong) UITextView    *commentsTextView;
+@property (nonatomic, strong) UIButton      *sendReportButton;
 
 @property (nonatomic, strong, readwrite) BITCrashDetails *crashDetails;
 
@@ -48,8 +49,25 @@ typedef enum {
 {
     CGFloat _commentRowHeight;
     
-    BOOL _hasLayoutManager;
+    BOOL _hasLayoutManager; // for height calculation
 }
+
+/*! Presents the crash report dialog as a modal view on the view controler. Modal presentation style
+ * is set to form sheet for iPads.
+ */
++ (instancetype) presentCrashReportDialogWithCrashDetails:(BITCrashDetails*)crashDetails appName:(NSString*)appName
+                                         onViewController:(UIViewController*)vc animated:(BOOL)animated completion:(void (^)(void))completion
+{
+    CBHockeyAppCrashReportTableViewController *ctrl = [[CBHockeyAppCrashReportTableViewController alloc] initWithCrashDetails:crashDetails
+                                                                                                                      appName:appName];
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:ctrl];
+    navCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
+    [vc presentViewController:navCtrl animated:YES
+                     completion:completion];
+    return ctrl;
+}
+
+#pragma mark -
 
 - (instancetype) initWithCrashDetails:(BITCrashDetails*)crashDetails appName:(NSString*)appName
 {
@@ -60,14 +78,26 @@ typedef enum {
     _crashDetails = crashDetails;
     
     self.title = [NSString stringWithFormat:CBLocalizedString(@"WindowTitle", @""), appName];
-    
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+    
+    if ([self.tableView respondsToSelector:@selector(setKeyboardDismissMode:)]) {
+        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    }
     
     _commentMinRowHeight = 100;
     
     _hasLayoutManager = NSClassFromString(@"NSLayoutManager") != nil;
     
     return self;
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // reload data to get the correct separatorInsets
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -136,58 +166,72 @@ typedef enum {
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:reuseIdentifier];
+    }
+    
+    UIView *control = nil;
+    CGRect controlFrame = CGRectInset(cell.contentView.bounds, cell.separatorInset.left,
+                                      cell.separatorInset.top);
+    
+    if (indexPath.section == CBCrashReportUISectionUserInfo && indexPath.row == CBCrashReportUIUserInfoCellName) {
+        if (!self.userNameTextField) {
+            UITextField *textField = [UITextField new];
+            textField.placeholder = CBLocalizedString(@"NameTextTitle", @"");
+            textField.delegate = self;
+            self.userNameTextField = textField;
+            control = textField;
+        } else {
+            self.userNameTextField.frame = controlFrame;
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        UIView *control = nil;
-
-        if (indexPath.section == CBCrashReportUISectionUserInfo && indexPath.row == CBCrashReportUIUserInfoCellName) {
-            if (!self.userNameTextField) {
-                UITextField *textField = [UITextField new];
-                textField.placeholder = CBLocalizedString(@"NameTextTitle", @"");
-                self.userNameTextField = textField;
-                control = textField;
-            }
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-        } else if (indexPath.section == CBCrashReportUISectionUserInfo && indexPath.row == CBCrashReportUIUserInfoCellEMail) {
-            if (!self.userEMailTextField) {
-                UITextField *textField = [UITextField new];
-                textField.placeholder = CBLocalizedString(@"EmailTextTitle", @"");
-                self.userEMailTextField = textField;
-                control = textField;
-            }
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-        } else if (indexPath.section == CBCrashReportUISectionComments) {
-            if (!self.commentsTextView) {
-                UITextView *textView = [[UITextView alloc] init];
-                textView.scrollEnabled = NO;
-                textView.scrollsToTop = NO;
-                textView.delegate = self;
-                textView.layoutManager.allowsNonContiguousLayout = NO;
-                self.commentsTextView = textView;
-                control = textView;
-            }
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-        } else if (indexPath.section == CBCrashReportUISectionAction) {
+    } else if (indexPath.section == CBCrashReportUISectionUserInfo && indexPath.row == CBCrashReportUIUserInfoCellEMail) {
+        if (!self.userEMailTextField) {
+            UITextField *textField = [UITextField new];
+            textField.placeholder = CBLocalizedString(@"EmailTextTitle", @"");
+            textField.delegate = self;
+            self.userEMailTextField = textField;
+            control = textField;
+        } else {
+            self.userEMailTextField.frame = controlFrame;
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+    } else if (indexPath.section == CBCrashReportUISectionComments) {
+        if (!self.commentsTextView) {
+            UITextView *textView = [[UITextView alloc] init];
+            textView.scrollEnabled = NO;
+            textView.scrollsToTop = NO;
+            textView.delegate = self;
+            textView.layoutManager.allowsNonContiguousLayout = NO;
+            self.commentsTextView = textView;
+            control = textView;
+        } else {
+            self.commentsTextView.frame = controlFrame;
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+    } else if (indexPath.section == CBCrashReportUISectionAction) {
+        if (!self.sendReportButton) {
             UIButton *actionButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             actionButton.userInteractionEnabled = NO; // just a dummy. Action is done via table
             [actionButton setTitle:CBLocalizedString(@"SendButtonTitle", @"")
                           forState:UIControlStateNormal];
             control = actionButton;
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-            
+            self.sendReportButton = actionButton;
+        } else {
+            self.sendReportButton.frame = controlFrame;
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         
-        if (control) {
-            control.frame = CGRectInset(cell.contentView.bounds, cell.separatorInset.left,
-                                        cell.separatorInset.top);
-            control.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-            control.backgroundColor = [UIColor clearColor];
-            control.opaque = NO;
+    }
+    
+    if (control) {
+        control.frame = controlFrame;
+        control.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        control.backgroundColor = [UIColor clearColor];
+        control.opaque = NO;
         
-            [cell.contentView addSubview:control];
-        }
+        [cell.contentView addSubview:control];
     }
 
     return cell;
@@ -228,6 +272,19 @@ typedef enum {
     [[BITHockeyManager sharedHockeyManager].crashManager handleUserInput:BITCrashManagerUserInputSend
                                                 withUserProvidedMetaData:crashMetaData];
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - Text field delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.userNameTextField) {
+        [self.userEMailTextField becomeFirstResponder];
+    } else if (textField == self.userEMailTextField) {
+        [self.commentsTextView becomeFirstResponder];
+    }
+    
+    return YES;
 }
 
 #pragma mark - Text view delegate
