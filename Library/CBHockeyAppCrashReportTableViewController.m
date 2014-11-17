@@ -82,7 +82,7 @@ typedef enum {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
     
     if ([self.tableView respondsToSelector:@selector(setKeyboardDismissMode:)]) {
-        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     }
     
     _commentMinRowHeight = 100;
@@ -177,6 +177,9 @@ typedef enum {
             UITextField *textField = [UITextField new];
             textField.placeholder = CBLocalizedString(@"NameTextTitle", @"");
             textField.delegate = self;
+            textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+            textField.autocorrectionType = UITextAutocorrectionTypeNo;
+            textField.returnKeyType = UIReturnKeyNext;
             self.userNameTextField = textField;
             control = textField;
         } else {
@@ -189,6 +192,10 @@ typedef enum {
             UITextField *textField = [UITextField new];
             textField.placeholder = CBLocalizedString(@"EmailTextTitle", @"");
             textField.delegate = self;
+            textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            textField.autocorrectionType = UITextAutocorrectionTypeNo;
+            textField.keyboardType = UIKeyboardTypeEmailAddress;
+            textField.returnKeyType = UIReturnKeyNext;
             self.userEMailTextField = textField;
             control = textField;
         } else {
@@ -197,12 +204,16 @@ typedef enum {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     } else if (indexPath.section == CBCrashReportUISectionComments) {
+        controlFrame = CGRectInset(controlFrame, -4, 0);
+        
         if (!self.commentsTextView) {
             UITextView *textView = [[UITextView alloc] init];
+            textView.font = [UIFont systemFontOfSize:17];
             textView.scrollEnabled = NO;
             textView.scrollsToTop = NO;
             textView.delegate = self;
             textView.layoutManager.allowsNonContiguousLayout = NO;
+            textView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0);
             self.commentsTextView = textView;
             control = textView;
         } else {
@@ -292,7 +303,7 @@ typedef enum {
 - (void)textViewDidChange:(UITextView *)textView
 {
     if (_hasLayoutManager) { // >= iOS 7
-        _commentRowHeight = [textView sizeThatFits:CGSizeMake(textView.bounds.size.width, CGFLOAT_MAX)].height;
+        _commentRowHeight = [textView sizeThatFits:CGSizeMake(textView.bounds.size.width, CGFLOAT_MAX)].height + 16;
     } else {
         _commentRowHeight = textView.contentSize.height;
     }
