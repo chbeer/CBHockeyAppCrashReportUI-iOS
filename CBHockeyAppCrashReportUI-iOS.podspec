@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    Uses a grouped UITableView for the dialog UI.
                    DESC
 
-  s.license      = "MIT"
+  s.license            = { :type => 'MIT', :file => 'LICENSE' }
 
   s.author             = { "Christian Beer" => "christian.beer@chbeer.de" }
   s.social_media_url   = "http://twitter.com/Christian_Beer"
