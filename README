@@ -27,7 +27,7 @@ To replace the default UIAlert you need to do this after setting up HockeySDK:
                                                                            onViewController:viewCtrl
                                                                                    animated:YES
                                                                                  completion:NULL];
-    }];
+     }];
 
 More info can be found here: http://hockeyapp.net/help/sdk/ios/3.6.1/docs/docs/HowTo-Set-Custom-AlertViewHandler.html
 
