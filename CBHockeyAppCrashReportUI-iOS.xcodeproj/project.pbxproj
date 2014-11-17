@@ -17,7 +17,6 @@
 		AA9FF7B81A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9FF7B71A19F48400F0E8D8 /* CBHockeyAppCrashReportTableViewController.m */; };
 		AA9FF7C51A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7C31A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings */; };
 		AA9FF7C91A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7C81A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec */; };
-		AA9FF7D11A1A23F600F0E8D8 /* README in Resources */ = {isa = PBXBuildFile; fileRef = AA9FF7D01A1A23F600F0E8D8 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,7 @@
 		AA9FF7CD1A1A172A00F0E8D8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
 		AA9FF7CE1A1A174600F0E8D8 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
 		AA9FF7CF1A1A176200F0E8D8 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/CBHockeyAppCrashReportUI.strings; sourceTree = "<group>"; };
-		AA9FF7D01A1A23F600F0E8D8 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		AA9FF7D21A1A403000F0E8D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D60D9C98D4BB8A7E64F548DC /* Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBHockeyAppCrashReportUI-iOS/Pods-CBHockeyAppCrashReportUI-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +90,7 @@
 		AA9FF78B1A19F41B00F0E8D8 /* CBHockeyAppCrashReportUI-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AA9FF7D01A1A23F600F0E8D8 /* README */,
+				AA9FF7D21A1A403000F0E8D8 /* README.md */,
 				AA9FF7C21A1A111F00F0E8D8 /* Library */,
 				AA9FF7BC1A1A06D200F0E8D8 /* Example */,
 			);
@@ -208,7 +207,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA9FF7D11A1A23F600F0E8D8 /* README in Resources */,
 				AA9FF7C91A1A11A000F0E8D8 /* CBHockeyAppCrashReportUI-iOS.podspec in Resources */,
 				AA9FF7C51A1A116800F0E8D8 /* CBHockeyAppCrashReportUI.strings in Resources */,
 				AA9FF7981A19F41B00F0E8D8 /* Main.storyboard in Resources */,
