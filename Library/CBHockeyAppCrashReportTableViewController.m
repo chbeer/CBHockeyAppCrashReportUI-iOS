@@ -146,6 +146,7 @@ typedef enum {
                 self.userNameTextField = textField;
                 control = textField;
             }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         } else if (indexPath.section == CBCrashReportUISectionUserInfo && indexPath.row == CBCrashReportUIUserInfoCellEMail) {
             if (!self.userEMailTextField) {
@@ -154,6 +155,7 @@ typedef enum {
                 self.userEMailTextField = textField;
                 control = textField;
             }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         } else if (indexPath.section == CBCrashReportUISectionComments) {
             if (!self.commentsTextView) {
@@ -165,6 +167,7 @@ typedef enum {
                 self.commentsTextView = textView;
                 control = textView;
             }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
         } else if (indexPath.section == CBCrashReportUISectionAction) {
             UIButton *actionButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -172,6 +175,8 @@ typedef enum {
             [actionButton setTitle:CBLocalizedString(@"SendButtonTitle", @"")
                           forState:UIControlStateNormal];
             control = actionButton;
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            
         }
         
         if (control) {
