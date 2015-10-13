@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CBHockeyAppCrashReportUI-iOS"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Dialog for adding details to a crash report as in the Mac version of HockeyApp."
 
   s.description  = <<-DESC
