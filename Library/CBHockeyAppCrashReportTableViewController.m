@@ -8,12 +8,12 @@
 
 #import "CBHockeyAppCrashReportTableViewController.h"
 
-#import "BITCrashDetails.h"
-#import "BITCrashMetaData.h"
-#import "BITCrashManager.h"
-#import "BITHockeyManager.h"
+#import <HockeySDK/BITCrashDetails.h>
+#import <HockeySDK/BITCrashMetaData.h>
+#import <HockeySDK/BITCrashManager.h>
+#import <HockeySDK/BITHockeyManager.h>
 
-#define CBLocalizedString(key,comment) NSLocalizedStringFromTableInBundle(key, @"CBHockeyAppCrashReportUI", [NSBundle mainBundle], comment)
+#define CBLocalizedString(key,comment) NSLocalizedStringFromTableInBundle(key, @"CBHockeyAppCrashReportUI", [NSBundle bundleForClass:self.class], comment)
 
 
 typedef enum {

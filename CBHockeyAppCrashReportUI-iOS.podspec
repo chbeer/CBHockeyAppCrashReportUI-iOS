@@ -24,6 +24,13 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency "HockeySDK"
+#  s.dependency "HockeySDK"
+  s.pod_target_xcconfig = {
+    'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework"',
+    'OTHER_LDFLAGS' => '-framework "HockeySDK"',
+  }
+
+  s.frameworks = [ "UIKit", "CoreGraphics", "QuartzCore", "AssetsLibrary", "MobileCoreServices", "QuickLook", "CoreText" ]
+  s.libraries = "c++"
 
 end
