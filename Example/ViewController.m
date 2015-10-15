@@ -8,15 +8,26 @@
 
 #import "ViewController.h"
 
-#import "BITCrashDetails.h"
-#import "BITCrashDetailsPrivate.h"
+#import <HockeySDK/BITCrashDetails.h>
 
 #import "CBHockeyAppCrashReportTableViewController.h"
 
 
-@interface ViewController ()
-
+@interface BITCrashDetails () 
+- (instancetype)initWithIncidentIdentifier:(NSString *)incidentIdentifier
+                               reporterKey:(NSString *)reporterKey
+                                    signal:(NSString *)signal
+                             exceptionName:(NSString *)exceptionName
+                           exceptionReason:(NSString *)exceptionReason
+                              appStartTime:(NSDate *)appStartTime
+                                 crashTime:(NSDate *)crashTime
+                                 osVersion:(NSString *)osVersion
+                                   osBuild:(NSString *)osBuild
+                                appVersion:(NSString *)appVersion
+                                  appBuild:(NSString *)appBuild
+                      appProcessIdentifier:(NSUInteger)appProcessIdentifier;
 @end
+
 
 @implementation ViewController
 
@@ -39,11 +50,10 @@
                                                                             signal:@"SIGHUP"
                                                                      exceptionName:@"NSNotFoundException"
                                                                    exceptionReason:@"Crashed because we couldn't find a better reason for a crash"
-                                                                      appStartTime:[NSDate new]
-                                                                         crashTime:[NSDate new]
-                                                                         osVersion:@"8.1.1"
-                                                                           osBuild:@"8A1234"
-                                                                          appBuild:@"1.2.3"];
+                                                                      appStartTime:[NSDate new] crashTime:[NSDate new]
+                                                                         osVersion:@"8.1.1" osBuild:@"8A1234" appVersion:@"1.2.3" appBuild:@"123"
+                                                              appProcessIdentifier:0x123];
+    
     NSString *appName = [[NSBundle mainBundle] infoDictionary][(NSString*)kCFBundleNameKey];
     [CBHockeyAppCrashReportTableViewController presentCrashReportDialogWithCrashDetails:details
                                                                                 appName:appName

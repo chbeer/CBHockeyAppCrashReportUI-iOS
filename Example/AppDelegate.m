@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "BITHockeyManager.h"
-#import "BITCrashManager.h"
-#import "BITAuthenticator.h"
+#import <HockeySDK/HockeySDK.h>
 
 #import "CBHockeyAppCrashReportTableViewController.h"
 
