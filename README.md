@@ -1,6 +1,8 @@
 HockeyApp Crash Reporter Dialog
 ===============================
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 On the Mac the HockeySDK presents a very useful UI when a crash happened. The user is asked for his
 name and eMail and a short comment on what he was doing when the crash happened.
 
