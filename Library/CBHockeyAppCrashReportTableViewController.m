@@ -284,7 +284,7 @@ typedef enum {
     BITCrashMetaData *crashMetaData = [BITCrashMetaData new];
     crashMetaData.userName = self.userNameTextField.text;
     crashMetaData.userEmail = self.userEMailTextField.text;
-    crashMetaData.userDescription = self.commentsTextView.text;
+    crashMetaData.userProvidedDescription = self.commentsTextView.text;
 
     [[BITHockeyManager sharedHockeyManager].crashManager handleUserInput:BITCrashManagerUserInputSend
                                                 withUserProvidedMetaData:crashMetaData];
